@@ -1,0 +1,17 @@
+DB_HOST=localhost
+DB_PORT=5432
+DB_USER=postgres
+DB_PASSWORD=done2024
+DB_NAME=projet_routier
+JWT_SECRET=290720251425
+JWT_EXPIRES_IN=24h
+FILE_UPLOAD_PATH=./uploads
+FILE_MAX_SIZE=10485760 # 10MB
+
+# Activités et communications
+MEETING_INVITATION_SUBJECT="Invitation à la réunion de chantier"
+MEETING_INVITATION_TEMPLATE="Vous êtes invité à une réunion le {date} à {time} sur le chantier {lot}."
+
+
+
+
