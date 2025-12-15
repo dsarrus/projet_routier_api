@@ -15,15 +15,16 @@ const port = process.env.PORT || 5000;
 
 // Configuration CORS pour le déploiement
 const corsOptions = {
-  origin: process.env.NODE_ENV === process.env.FRONTEND_URL /*"production"
+  origin:
+    process.env.NODE_ENV === "production"
       ? process.env.FRONTEND_URL || "http://localhost:3000"
-      : "http://localhost:3000"*/,
+      : "http://localhost:3000",
   credentials: true,
   optionsSuccessStatus: 200,
 };
 
 // Middleware
-app.use(cors());
+app.use(cors(corsOptions));
 app.use(helmet());
 app.use(morgan("dev"));
 app.use(express.json());
@@ -57,6 +58,7 @@ const pool = new Pool({
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME,
+  ssl: process.env.SSL_MODE,
 });
 
 // Testez la connexion au démarrage
